@@ -1,20 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProstageController!{% endblock %}
+{% block contenu %}
+<h1>Bienvenue sur Prostages !</h1>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Temp/symfony/monProjet/src/Controller/ProstageController.php'|file_link(0) }}">src/Controller/ProstageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Temp/symfony/monProjet/templates/prostage/index.html.twig'|file_link(0) }}">templates/prostage/index.html.twig</a></code></li>
-    </ul>
-</div>
+<p>
+  Cette page présentera bientôt toutes les propositions de stages susceptibles de vous être utiles durant votre formation à l'IUT.
+Vous trouverez ci-dessous les dernières offres ajoutées sur Prostages.
+</p>
+<ul>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+    <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+    <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+    <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+    <li>
+    <a href="{{path('pro_stages-stages',{id:5})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:152})}}">Stage 1</a>
+  </li>
+  <li>
+    <a href="{{path('pro_stages-stages',{id:726})}}">Stage 1</a>
+  </li>
+</ul>
 {% endblock %}
