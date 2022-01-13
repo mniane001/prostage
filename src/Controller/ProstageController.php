@@ -42,7 +42,7 @@ class ProstageController extends AbstractController
      */
     public function stages($id): Response
     {
-        return $this->render('pro_stages/stages.html.twig',['idRessource '=>$id ]);
+        return $this->render('prostage/stages.html.twig',['idStages'=>$id ]);
 
     }
 }
