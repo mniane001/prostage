@@ -1,11 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block titrePage %}
-<h1> Nom du stage {{idStages}}</h1>
+Nom du stage {{idStages}}
 {% endblock %}
 
 {% block contenuPage %}
-<p>
-  Cette page affichera le descriptif de l'offre de stage numéro {{idStages}}.
-</p>
+<ul class="list-group">
+
+  <li class="list-group-item"><strong>Descriptif :</strong> Descriptif de l'offre ...</li>
+  <li class="list-group-item"><strong>Date d'ajout :</strong> 03/10/2021</li>
+  <li class="list-group-item"><strong>Nom de l'entreprise :</strong> Orange</li>
+  <li class="list-group-item"><strong>Activités :</strong> lorem... </li>
+  <li class="list-group-item"><strong>Adresse :</strong> lorem... </li>
+  <li class="list-group-item"><strong>mail :</strong> lorem... </li>
+</ul>
+{% endblock %}
+
+
+{% block footer %}
+                      <ul class="navbar-nav ml-md-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="icon-left"></i> Retour
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
 {% endblock %}

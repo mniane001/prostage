@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+<h1>Bienvenue sur Prostages !</h1>
+{% block titrePage %}
+<h1>Liste des Entreprises </h1>
+{% endblock %}
+
+{% block contenuPage %}
+<p>
+  Cette page présente la liste des différentes entreprises avec leur proposition de stages.
+</p>
+  <div class="card-deck">
+    <div class="card">
+
+      <div class="card-body">
+      <a href="{{ path('pro_stages_stage-entreprises') }}">Orange</h5>
+            
+      </a>
+
+        <p class="card-text">Présentation de l'entreprise</p>
+
+      </div>
+    </div>
+     <div class="card">
+
+      <div class="card-body">
+      <a href="{{ path('pro_stages_stage-entreprises') }}">Sogeti</h5>
+      </a>
+        <p class="card-text">Présentation de l'entreprise</p>
+
+      </div>
+    </div>
+       <div class="card">
+
+      <div class="card-body">
+      <a href="{{ path('pro_stages_stage-entreprises') }}">Soa</h5>
+      </a>
+        <p class="card-text">Présentation de l'entreprise</p>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+    {% block footer %}
+                      <ul class="navbar-nav ml-md-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="icon-left"></i> Retour
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+  {% endblock %}
+
+{% endblock %}
