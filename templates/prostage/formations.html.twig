@@ -1,90 +1,86 @@
-<?php
+{% extends 'base.html.twig' %}
 
-namespace App\DataFixtures;
+{% block contenu %}
+<h1>Bienvenue sur Prostages !</h1>
+{% block titrePage %}
+<h1>Liste des Formations </h1>
+{% endblock %}
 
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Persistence\ObjectManager;
-use App\Entity\Formation;
-use App\Entity\Entreprise;
-use App\Entity\Stage;
+{% block contenuPage %}
+<p>
+  Cette page présente toutes les formations qui pourront trouver des offres correspondants à leur besoin.
+</p>
+  <div class="card-deck">
+    <div class="card">
 
-class AppFixtures extends Fixture
-{
-    public function load(ObjectManager $manager): void
-    {
-        // Création d'un générateur de données Faker
-        $faker = \Faker\Factory::create('fr_FR');
-        
-        // Créations de formations 
-        $DUTInfo = new Formation();
-        $DUTInfo->setNomCourt("DUT INFO");
-        $DUTInfo->setNomLong("DUT Informatique");
-       
-        $DUTGea = new Formation();
-        $DUTGea->setNomCourt("DUT GEA");
-        $DUTGea->setNomLong("DUT Gestion des Entreprises/Admin");
-        
-        $BUTGim = new Formation();
-        $BUTGim->setNomCourt("BUT GIM");
-        $BUTGim->setNomLong("BUT Génie Industriel et Maintenance");
-        
-        $LPGs = new Formation();
-        $LPGs->setNomCourt("LP GS");
-        $LPGs->setNomLong("LP Gestion Salariale");
-         
-        $LPNum = new Formation();
-        $LPNum->setNomCourt("LP NUM");
-        $LPNum->setNomLong("LP Métiers du Numérique");
-        
-        $LPProg = new Formation();
-        $LPProg->setNomCourt("LP Prog");
-        $LPProg->setNomLong("LP Programmation avancée");
+      <div class="card-body">
 
-        // Création d'un tableau contenant toutes les formations
-        $tableauDesFormations = array($DUTInfo, $DUTGea, $BUTGim, $LPGs, $LPNum, $LPProg);
+              <h5 class="card-title">DUT Informatique</h5>
 
-        // Enregistrement
-        foreach($tableauDesFormations as $tabFormations)
-        {
-            $manager->persist($tabFormations);
-        }
-        
-        // Création des entreprises
-        $nbrEntreprises = 18;
+        <p class="card-text">Description de la formation</p>
 
-        for($i = 0; $i < $nbrEntreprises; $i++)
-        {
-            $entreprise = new Entreprise();
-            $entreprise->setNom($faker->company);
-            $entreprise->setAdresse($faker->address);
-            $entreprise->setActivite($faker->realText($maxNbChars = 50, $indexSize = 2));
-            $entreprise->setSiteWeb($faker->url);
+      </div>
+    </div>
+     <div class="card">
 
-            // Création d'un tableau d'entreprises
-            $tableauDesEntreprises[] = $entreprise;
-            $manager->persist($entreprise);
-        }
+      <div class="card-body">
 
-        // Création des stages
-        $nbrStages = 20;
+              <h5 class="card-title">DUT Gestion des Entreprises/Admin</h5>
 
-        for($iS = 0; $iS < $nbrStages; $iS++)
-        {
-            $stage = new Stage();
-            $stage->setTitre($faker->realText($maxNbChars = 100, $indexSize = 2));
-            $stage->setMission($faker->paragraph(5, false));
-            $stage->setEmail($faker->email);
+        <p class="card-text">Description de la formation</p>
 
-            $entrepriseVersStage = $faker->numberBetween($min = 0, $max = 17);
-            $stage->setEntreprise($tableauDesEntreprises[$entrepriseVersStage]);
+      </div>
+    </div>
+        <div class="card">
 
-            $formationVersStage = $faker->numberBetween($min = 0, $max = 5);
-            $stage->addFormation($tableauDesFormations[$formationVersStage]);
+      <div class="card-body">
 
-            $manager->persist($stage);
-        }
+              <h5 class="card-title">BUT Génie Industriel et Maintenance</h5>
 
-        // Envoyer les données en BD
-        $manager->flush();
-    }
-}
+        <p class="card-text">Description de la formation</p>
+
+      </div>
+    </div>
+      <div class="card">
+
+      <div class="card-body">
+
+              <h5 class="card-title">LP Gestion Salariale</h5>
+
+        <p class="card-text">Description de la formation</p>
+
+      </div>
+    </div>
+      <div class="card">
+
+      <div class="card-body">
+
+              <h5 class="card-title">LP Métiers du Numérique</h5>
+
+        <p class="card-text">Description de la formation</p>
+
+      </div>
+    </div>
+      <div class="card">
+
+      <div class="card-body">
+
+              <h5 class="card-title">LP Programmation avancée</h5>
+
+        <p class="card-text">Description de la formation</p>
+
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% endblock %}
+
+    {% block footer %}
+                      <ul class="navbar-nav ml-md-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="icon-left"></i> Retour
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+  {% endblock %}
